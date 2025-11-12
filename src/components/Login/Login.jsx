@@ -3,21 +3,44 @@ import "./Login.css"
 import { useNavigate } from "react-router-dom";
 import bigLogo from "../../assets/logoBlack.png";
 import smallLogo from "../../assets/minLogo.png";
+import { login as loginAPI } from "../../api/auth"; // seu serviço de login
+import Swal from "sweetalert2";
+import "./Login.css";
 
 function Login() {
-  const navigate = useNavigate();
+ const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  
   const handleLogin = async (e) => {
     e.preventDefault();
 
-  
-    if (email && password) {
-      navigate("/home"); 
-    } else {
-      alert("Preencha os campos corretamente!");
+    if (!email || !password) {
+      Swal.fire({
+        icon: "warning",
+        title: "Campos obrigatórios",
+        text: "Preencha email e senha!",
+      });
+      return;
+    }
+
+    try {
+       await loginAPI(email, password);
+      
+      Swal.fire({
+        icon: "success",
+        title: "Login realizado!",
+        text: "Bem-vindo(a)!",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      navigate("/home"); // redireciona para a Home após login
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Erro no login",
+        text: error?.message || "Email ou senha inválidos",
+      });
     }
   };
 
