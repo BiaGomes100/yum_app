@@ -1,13 +1,23 @@
 import React from "react";
-import Login from "./components/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./components/mainLayout";
+import Home from "./components/home/home";
+import Produtos from "./components/produtos/produtos";
+import Login from "./components/Login/Login";
 
-export default function App() {
+function App() {
   return (
-    // full screen container
-    <div className="min-h-screen bg-[#222] flex items-center justify-center">
-      <div className="w-[1000px] max-w-full h-[520px] bg-transparent shadow-lg rounded-md overflow-hidden">
-        <Login />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route element={<MainLayout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/produtos" element={<Produtos />} />
+        </Route>
+      </Routes>
+    </Router>
+
   );
 }
+
+export default App;

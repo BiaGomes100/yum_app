@@ -1,0 +1,83 @@
+/* ======== Produtos.css ======== */
+
+.produtos-container {
+  max-width: 480px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem 2.5rem; /* padding mais equilibrado */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(230, 230, 230, 0.7);
+}
+
+.produtos-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.produtos-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.produtos-form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.produtos-form input,
+.produtos-form select {
+  width: 100%;
+  box-sizing: border-box; /* garante que o padding não quebre o layout */
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #fafafa;
+  border: 1px solid rgba(200, 200, 200, 0.6);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.produtos-form input:focus,
+.produtos-form select:focus {
+  background-color: #fff;
+  border-color: #3fa26f;
+  box-shadow: 0 0 0 2px rgba(63, 162, 111, 0.2);
+}
+
+.produtos-form button {
+  height: 50px;
+  background-color: #3fa26f;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.produtos-form button:hover {
+  background-color: #3a9466;
+  transform: translateY(-1px);
+}
+
+.produtos-form button:active {
+  transform: translateY(0);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .produtos-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}

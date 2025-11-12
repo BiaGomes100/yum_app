@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import "./Login.css"
+import { useNavigate } from "react-router-dom";
+import bigLogo from "../../assets/logoBlack.png";
+import smallLogo from "../../assets/minLogo.png";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  
+  const handleLogin = async (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nSenha: ${password}`);
+
+  
+    if (email && password) {
+      navigate("/home"); 
+    } else {
+      alert("Preencha os campos corretamente!");
+    }
   };
 
   return (
@@ -15,17 +26,15 @@ function Login() {
       {/* Lado esquerdo */}
       <div className="left-side">
         <img src={bigLogo} alt="Yamme logo" className="big-logo" />
-        <h1 className="brand-name">Yamme</h1>
       </div>
 
       {/* Lado direito */}
       <div className="right-side">
         <div className="login-header">
-          <img src={smallLogo} alt="logo pequeno" className="small-logo" />
-          <h2>Login</h2>
+          <h1>Login</h1>
         </div>
 
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={handleLogin} className="login-form">
           <input
             type="email"
             placeholder="Email"
@@ -47,6 +56,11 @@ function Login() {
           <button type="submit" className="btn green">
             Entrar
           </button>
+          <div className="divider">
+            <div className="linha"></div>
+            <span>ou</span>
+            <div className="linha"></div>
+          </div>
 
           <button type="button" className="btn yellow">
             Criar Conta

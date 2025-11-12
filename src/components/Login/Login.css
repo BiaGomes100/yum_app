@@ -1,7 +1,7 @@
 .login-container {
   display: flex;
-  width: 900px;
-  height: 500px;
+  width: 100%;
+  height: 100vh;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
@@ -34,12 +34,15 @@
 /* lado direito */
 .right-side {
   flex: 1;
+  flex-direction: column;
+  justify-content: center;
   background-color: #ffffff;
-  padding: 40px 30px;
   position: relative;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
 .login-header {
@@ -56,12 +59,17 @@
 
 .login-form {
   width: 100%;
+  padding: 0 200px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin-top: 30px;
 }
 
 .login-form input {
+  width: 60%;
+  height: 30px;
   border: 1.5px solid #9fe5c0;
   border-radius: 25px;
   padding: 12px 18px;
@@ -69,6 +77,20 @@
   outline: none;
   font-size: 15px;
   transition: 0.3s;
+}
+.divider {
+  width: 60%;
+  display: flex;
+ gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0;
+}
+.linha{
+   width: 100%;
+  height: 1px;
+  background-color: #ccc;
 }
 
 .login-form input:focus {
@@ -89,6 +111,8 @@
 
 /* botões */
 .btn {
+  width: 66%;
+  height: 50px;
   border: none;
   border-radius: 25px;
   padding: 12px;

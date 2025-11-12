@@ -1,0 +1,80 @@
+.card {
+  width: 200px;
+  height: 250px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== STATUS ===== */
+.card-status-container {
+  text-align: center;
+  border-radius: 10px;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card-status-container.Disponivel {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.card-status-container.Indisponivel {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+/* ===== TÍTULO ===== */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* ===== INFO ===== */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== PREÇO E BOTÃO ===== */
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.card-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-btn {
+  background-color: #3fa26f62;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-btn:hover {
+  background-color: #3a9466;
+}
