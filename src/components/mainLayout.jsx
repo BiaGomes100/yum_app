@@ -6,7 +6,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Outlet } from "react-router-dom";
-import "./MainLayout.css";
+import "./mainLayout.css";
 
 function MainLayout() {
   const [search, setSearch] = useState("");
